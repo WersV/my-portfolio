@@ -17,8 +17,12 @@ import { RouterLink, RouterView } from 'vue-router'
   <RouterView />
 </template>
 
-<style scoped>
+<style lang="scss">
+@import './assets/_variables.scss';
 body {
-  background-color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: $bcg-color-dark;
 }
 </style>
