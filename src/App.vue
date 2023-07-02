@@ -1,28 +1,19 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import LightSwitcher from '@/components/AppLightSwitcher.vue'
+import NavMenu from '@/components/AppNavMenu.vue'
+import {RouterView} from 'vue-router'
 </script>
 
 <template>
-  <section>
-    <div class="sidebar">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/portfolio">Portfolio</RouterLink>
-        <RouterLink to="/contact">Contact</RouterLink>
-      </nav>
-    </div>
-  </section>
-
+  <LightSwitcher/>
+  <NavMenu/>
   <RouterView />
 </template>
 
 <style lang="scss">
 @import './assets/_variables.scss';
+@import './assets//global.css';
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: $bcg-color-dark;
+  background-color: $bcg-color-light;
 }
 </style>

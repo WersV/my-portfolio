@@ -17,10 +17,15 @@ import {
 } from '@fortawesome/vue-fontawesome'
 
 import {
-  faMoon
+  faMoon,
+  faHouse,
+  faUser,
+  faBriefcase,
+  faEnvelope,
+  faLightbulb
 } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faMoon)
+library.add(faMoon, faHouse, faUser, faBriefcase, faEnvelope, faLightbulb)
 
 const app = createApp(App)
 
