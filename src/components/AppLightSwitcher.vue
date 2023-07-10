@@ -36,6 +36,8 @@ const toggleDark = useToggle(isDark)
     transform: translate(-50%, -50%);
     background-color: transparent;
     border: 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
     .fa-moon, .fa-lightbulb {
       font-size: 35px;
       color: $bcg-color-light;

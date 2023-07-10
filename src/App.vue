@@ -11,7 +11,7 @@ import {RouterView} from 'vue-router'
 </template>
 
 <style lang="scss">
-@import './assets/_variables.scss';
+@import '@/assets/_variables.scss';
 @import './assets//global.css';
 body {
   background-color: $bcg-color-light;

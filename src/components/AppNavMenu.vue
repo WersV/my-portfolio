@@ -22,12 +22,14 @@ import { RouterLink } from 'vue-router'
   height: 55px;
   padding: 8px;
   background-color: $nav-bcg-light;
+  z-index: 2;
   .nav-link {
     position: relative;
     width: 45px;
     height: 45px;
     border-radius: 50%;
     background-color: $btn-bcg-light;
+    -webkit-tap-highlight-color: transparent;
     & > * {
       position: absolute;
       top: 50%;
