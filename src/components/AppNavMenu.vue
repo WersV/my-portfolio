@@ -19,7 +19,7 @@ import { RouterLink } from 'vue-router'
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 55px;
+  // height: 55px;
   padding: 8px;
   background-color: $nav-bcg-light;
   z-index: 2;
@@ -30,13 +30,20 @@ import { RouterLink } from 'vue-router'
     border-radius: 50%;
     background-color: $btn-bcg-light;
     -webkit-tap-highlight-color: transparent;
-    & > * {
+    svg {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 20px;
       color: $btn-text-light;
+    }
+  }
+
+  .router-link-active {
+      background-color: $active-btn-bcg; 
+    svg {
+      color: $active-btn-text;
     }
   }
 }
@@ -46,8 +53,14 @@ import { RouterLink } from 'vue-router'
   background-color: $nav-bcg-dark;
   .nav-link {
     background-color: $btn-bcg-dark;
-    & > * {
+    svg {
       color: $btn-text-dark;
+    }
+  }
+  .router-link-active {
+      background-color: $active-btn-bcg; 
+    svg {
+      color: $active-btn-text;
     }
   }
 }
