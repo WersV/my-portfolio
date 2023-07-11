@@ -27,7 +27,7 @@ const toggleDark = useToggle(isDark)
   right: 20px;
   width: 50px;
   height: 50px;
-  background-color: $bcg-color-dark;
+  background-color: #2c2c2c;
   border-radius: 50%;
   .switch {
     position: absolute;

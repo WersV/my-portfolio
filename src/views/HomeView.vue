@@ -74,6 +74,7 @@
       cursor: pointer;
       overflow: hidden;
       transition: .3s linear;
+      -webkit-tap-highlight-color: transparent;
       span {
         position: absolute;
         top: -2.5%;
@@ -115,6 +116,15 @@
 //     margin: 30px 20px 0 20px;
 //   }
 // }
+
+//dark mode
+.dark .home-view {
+  .home-info {
+    h1, p, button {
+      color: white;
+    }
+  }
+}
 
 @media (max-height: 730px) {
   .home-view {
