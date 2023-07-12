@@ -1,7 +1,7 @@
 <template>
   <main class="home-view">
     <header class="home-img-container">
-      <img src="@/assets/img/portfolio-photo.jpg" alt="portfolio owner">
+      <!-- <img src="@/assets/img/portfolio-photo-mobile.jpg" alt="portfolio owner"> -->
     </header>
     <section class="home-info">
       <h1><span>I'm Przemysław Botwina <br/></span>web developer</h1>
@@ -21,7 +21,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // position: relative;
   margin: 0 20px 0 20px;
   height: 100vh;
   box-sizing: border-box;
@@ -130,6 +129,44 @@
   .home-view {
     justify-content: flex-start;
     margin: 30px 20px 0 20px;
+  }
+}
+
+@media (min-width: 570px) {
+  .home-view {
+    .home-info {
+      h1 {
+        font-size: 37px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-view {
+    flex-direction: row;
+    .home-img-container {
+      width: 35%;
+      height: 80vh;
+      background-image: url('@/assets/img/portfolio-photo-desktop.jpg');
+      background-size: cover;
+      background-position-x: center;
+      border-radius: 30px;
+      margin: 0 50px 0 0;
+    }
+    .home-info {
+      width: 45vw;
+      max-width: 600px;
+      text-align: left;
+      justify-content: flex-start;
+      margin-right: 50px;
+      p {
+        line-height: 2;
+      }
+      button {
+        margin: 0;
+      }
+    }
   }
 }
 
