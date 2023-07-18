@@ -124,6 +124,7 @@
     }
   }
 }
+// end of dark mode
 
 @media (max-height: 730px) {
   .home-view {

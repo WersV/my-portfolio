@@ -52,6 +52,7 @@ import { RouterLink } from 'vue-router'
   }
 }
 
+
 @media (min-width: 1024px) {
   .sidebar {
     flex-direction: column;
@@ -61,7 +62,11 @@ import { RouterLink } from 'vue-router'
     width: 55px;
     height: 350px;
     background-color: transparent;
+    .nav-link {
+      background-color: rgb(243, 243, 243);
+    }
   }
+  // dark mode
   .dark .sidebar {
     background-color: transparent;
   }
