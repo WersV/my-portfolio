@@ -76,6 +76,12 @@ import { RouterLink } from 'vue-router'
     .nav-link {
       background-color: rgb(243, 243, 243);
     }
+    .router-link-active {
+      background-color: $active-btn-bcg; 
+    svg {
+      color: $active-btn-text;
+    }
+  }
   }
   // dark mode
   .dark .sidebar {
