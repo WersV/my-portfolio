@@ -16,4 +16,9 @@ import {RouterView} from 'vue-router'
 body {
   background-color: $bcg-color-light;
 }
+
+//dark mode 
+.dark body {
+  background-color: $bcg-color-dark;
+}
 </style>
