@@ -64,8 +64,6 @@ import { RouterLink } from 'vue-router'
     }
   }
 }
-
-
 @media (min-width: 1024px) {
   .sidebar {
     flex-direction: column;
