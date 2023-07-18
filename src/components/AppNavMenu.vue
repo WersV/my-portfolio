@@ -64,10 +64,6 @@ import { RouterLink } from 'vue-router'
     }
   }
 }
-<<<<<<< Updated upstream
-=======
-
-
 @media (min-width: 1024px) {
   .sidebar {
     flex-direction: column;
@@ -92,5 +88,4 @@ import { RouterLink } from 'vue-router'
     background-color: transparent;
   }
 }
->>>>>>> Stashed changes
 </style>
