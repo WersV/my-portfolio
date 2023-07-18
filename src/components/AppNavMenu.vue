@@ -64,4 +64,33 @@ import { RouterLink } from 'vue-router'
     }
   }
 }
+<<<<<<< Updated upstream
+=======
+
+
+@media (min-width: 1024px) {
+  .sidebar {
+    flex-direction: column;
+    bottom: 50%;
+    left: 92%;
+    transform: translateY(50%);
+    width: 55px;
+    height: 350px;
+    background-color: transparent;
+    .nav-link {
+      background-color: rgb(243, 243, 243);
+    }
+    .router-link-active {
+      background-color: $active-btn-bcg; 
+    svg {
+      color: $active-btn-text;
+    }
+  }
+  }
+  // dark mode
+  .dark .sidebar {
+    background-color: transparent;
+  }
+}
+>>>>>>> Stashed changes
 </style>
