@@ -1,7 +1,8 @@
 <template>
   <main class="home-view">
+    <div class="css-el"></div>
     <header class="home-img-container">
-      <!-- <img src="@/assets/img/portfolio-photo-mobile.jpg" alt="portfolio owner"> -->
+      <img src="@/assets/img/portfolio-photo-mobile.jpg" alt="portfolio owner" v-if="isLowRes">
     </header>
     <section class="home-info">
       <h1><span>I'm Przemysław Botwina <br/></span>web developer</h1>
@@ -12,6 +13,23 @@
 </template>
 
 <script setup>
+import {ref, onMounted} from 'vue'
+  const isLowRes = ref(null)
+
+
+  function showLowResImg() {
+    const width = window.innerWidth
+    if (width < 1024) {
+      isLowRes.value = true
+    } else {
+      isLowRes.value = false
+    }
+  }
+  
+  onMounted(() => {
+    window.addEventListener('resize', showLowResImg)
+    showLowResImg()
+  })
 </script>
 
 <style scoped lang="scss">
@@ -146,6 +164,20 @@
 @media (min-width: 1024px) {
   .home-view {
     flex-direction: row;
+    position: relative;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0 40px;
+    .css-el {
+      position: absolute;
+      width: 30vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      background-color: #FFB400;
+      clip-path: polygon(0% 0%,0% 100%,100% 100%,35% 0%);
+      z-index: -1;
+    }
     .home-img-container {
       width: 35%;
       height: 80vh;
@@ -161,6 +193,9 @@
       text-align: left;
       justify-content: flex-start;
       margin-right: 50px;
+      h1 {
+        font-size: 42px;
+      }
       p {
         line-height: 2;
       }
