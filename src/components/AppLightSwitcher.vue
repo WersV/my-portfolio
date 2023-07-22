@@ -29,6 +29,7 @@ const toggleDark = useToggle(isDark)
   height: 50px;
   background-color: #2c2c2c;
   border-radius: 50%;
+  z-index: 1;
   .switch {
     position: absolute;
     top: 50%;
