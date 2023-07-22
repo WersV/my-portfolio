@@ -165,7 +165,9 @@ import {ref, onMounted} from 'vue'
   .home-view {
     flex-direction: row;
     position: relative;
+    justify-content: space-around;
     margin: 0;
+    padding: 0 40px;
     .css-el {
       position: absolute;
       width: 30vw;
