@@ -14,7 +14,7 @@ import { RouterLink } from 'vue-router'
 .sidebar {
   position: fixed;
   bottom: 0;
-  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -68,7 +68,7 @@ import { RouterLink } from 'vue-router'
   .sidebar {
     flex-direction: column;
     bottom: 50%;
-    left: 92%;
+    right: 20px;
     transform: translateY(50%);
     width: 55px;
     height: 350px;
