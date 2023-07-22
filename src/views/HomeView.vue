@@ -45,11 +45,7 @@ import {ref, onMounted} from 'vue'
   .home-img-container {
     margin-bottom: 20px;
     img {
-      display: block;
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      margin: 0 auto;
+      @include img-styles;
     }
   }
   .home-info {
@@ -74,57 +70,7 @@ import {ref, onMounted} from 'vue'
       color: #666666;
       margin-bottom: 20px;
     }
-    button {
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      width: 200px;
-      font-size: 20px;
-      font-weight: 700;
-      background-color: transparent;
-      border: 1px solid #FFB400;
-      border-radius: 30px;
-      padding: 15px 20px 15px 55px;
-      margin-bottom: 70px;
-      text-align: center;
-      color: #666666;
-      cursor: pointer;
-      overflow: hidden;
-      transition: .3s linear;
-      -webkit-tap-highlight-color: transparent;
-      span {
-        position: absolute;
-        top: -2.5%;
-        right: -1%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 55px;
-        height: 55px;
-        background-color: #FFB400;
-        border-radius: 50%;
-        color: white;
-      }
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translateX(100%);
-        width: 200px;
-        height: 100%;
-        background-color: #FFB400;
-        border-radius: 20px;
-        z-index: -1;
-        transition: .3s linear;
-      }
-    }
-    button:hover::after {
-      transform: translateX(0);
-    }
-    button:hover {
-      color: white;
-    }
+    @include btn-styles-anim(200px);
   }
 }
 
