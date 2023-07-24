@@ -36,26 +36,27 @@
         </div> 
       </section>
       <button>Download CV <span><font-awesome-icon icon="fa-solid fa-arrow-right" /></span></button>
-    </section>
-    <section class="key-features">
-      <div>
+      </section>
+      <section class="key-features">
+      <div class="feature">
         <span>2+</span>
         <p>years of experience</p>
       </div>
-      <div>
+      <div class="feature">
         <span>10+</span>
         <p>Completed projects</p>
       </div>
-      <div>
+      <div class="feature">
         <span>900+</span>
         <p>Hours on learning</p>
       </div>
-      <div>
-        <span>Countless</span>
+      <div class="feature">
+        <span><font-awesome-icon icon="fa-solid fa-infinity" /></span>
         <p>Bugs fixed</p>
       </div>
-    </section>
+      </section>
     </div>
+    <div class="separator"></div>
     <section class="my-skills">
       <h2>My skills</h2>
       <h3>Technical</h3>
@@ -112,7 +113,7 @@ export default {
   .about-view {
     margin: 0 20px;
     h1 {
-      color: #666666;
+      color: $text-gray;
       text-transform: uppercase;
       font-weight: 900;
       margin: 50px 0;
@@ -123,7 +124,8 @@ export default {
     .wrapper {
       .personal-info {
         h2 {
-          color:#666666;
+          font-size: 21px;
+          color: $text-gray;
           text-transform: uppercase;
           margin: 30px 0;
         }
@@ -143,19 +145,51 @@ export default {
             color: rgb(139, 139, 139);
           }
           span {
-            color: #666666;
+            color: $text-gray;
             font-weight: 700;
           }
         }
         .detail-link {
           a {
             text-decoration: none;
-            color: #666666;
+            color: $text-gray;
             font-weight: 700;
           }
         }
       }
+      .key-features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      .feature {
+        flex-basis: 45%;
+        // border: 1px solid #cecece;
+        box-shadow: 0px 0px 2px 1px #cecece;
+        padding: 15px;
+        span {
+          color: #FFB400;
+          font-size: 32px;
+          font-weight: 700;
+        }
+        p {
+          color: $text-gray;
+          width: 70px;
+        }
+      }
+      .feature:last-child {
+        span {
+          font-size: 35px;
+          line-height: 30px;
+        }
+      }
+     }
       @include btn-styles-anim(250px);
+    }
+    .separator {
+      width: 50%;
+      border-bottom: 1px solid #d8d8d8;
+      margin: 60px auto;
     }
   }
   // zrób propsy isLowRes z App.vue do child components
