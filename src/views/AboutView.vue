@@ -60,45 +60,46 @@
     <section class="my-skills">
       <h2>My skills</h2>
       <h3>Technical</h3>
-      <div>
-        <span>Vue</span>
-      </div>
-      <div>
-        <span>JavaScript</span>
-      </div>
-      <div>
-        <span>HTML</span>
-      </div>
-      <div>
-        <span>CSS/SASS</span>
-      </div>
-      <div>
-        <span>Responsive Design</span>
-      </div>
-      <div>
-        <span>GIT</span>
-      </div>
-      <div>
-        <span>REST API</span>
-      </div>
-      <div>
-        <span>Web Accessibility</span>
-      </div>
-      <div>
-        <span></span>
+      <div class="skills-wrapper">
+        <div class="skill">
+          <span>Vue</span>
+        </div>
+        <div class="skill">
+          <span>JavaScript</span>
+        </div>
+        <div class="skill">
+          <span>HTML</span>
+        </div>
+        <div class="skill">
+          <span>CSS/SASS</span>
+        </div>
+        <div class="skill">
+          <span>Responsive Design</span>
+        </div>
+        <div class="skill">
+          <span>GIT</span>
+        </div>
+        <div class="skill">
+          <span>REST API</span>
+        </div>
+        <div class="skill">
+          <span>Web Accessibility</span>
+        </div>
       </div>
       <h3>Soft</h3>
-      <div>
-        <span>Problem-Soliving</span>
-      </div>
-      <div>
-        <span>Teamwork</span>
-      </div>
-      <div>
-        <span>Creativity</span>
-      </div>
-      <div>
-        <span>Communication</span>
+      <div class="skills-wrapper">
+        <div class="skill">
+          <span>Problem-Soliving</span>
+        </div>
+        <div class="skill">
+          <span>Teamwork</span>
+        </div>
+        <div class="skill">
+          <span>Creativity</span>
+        </div>
+        <div class="skill">
+          <span>Communication</span>
+        </div>
       </div>
     </section>
   </main>
@@ -113,7 +114,7 @@ export default {
   .about-view {
     margin: 0 20px;
     h1 {
-      color: $text-gray;
+      color: $text-light-gray;
       text-transform: uppercase;
       font-weight: 900;
       margin: 50px 0;
@@ -124,10 +125,7 @@ export default {
     .wrapper {
       .personal-info {
         h2 {
-          font-size: 21px;
-          color: $text-gray;
-          text-transform: uppercase;
-          margin: 30px 0;
+          @include about-me-h2;
         }
         img {
           @include img-styles;
@@ -145,14 +143,14 @@ export default {
             color: rgb(139, 139, 139);
           }
           span {
-            color: $text-gray;
+            color: $text-light-gray;
             font-weight: 700;
           }
         }
         .detail-link {
           a {
             text-decoration: none;
-            color: $text-gray;
+            color: $text-light-gray;
             font-weight: 700;
           }
         }
@@ -173,7 +171,7 @@ export default {
           font-weight: 700;
         }
         p {
-          color: $text-gray;
+          color: $text-light-gray;
           width: 70px;
         }
       }
@@ -189,8 +187,99 @@ export default {
     .separator {
       width: 50%;
       border-bottom: 1px solid #d8d8d8;
-      margin: 60px auto;
+      margin: 60px auto 22px auto;
+    }
+    .my-skills {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      h2 {
+        @include about-me-h2;
+      }
+      h3 {
+        font-size: 16px;
+        color: rgb(139, 139, 139);
+        text-transform: uppercase;
+        margin: 20px 0;
+      }
+      .skills-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        .skill {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          width: 120px;
+          height: 120px;
+          border: 2px solid #FFB400;
+          border-radius: 50%;
+          span {
+            color: $text-light-gray;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+    .my-skills .skills-wrapper:last-child {
+      margin-bottom: 80px;
     }
   }
+
+  //dark mode
+  .dark .about-view {
+    h1 {
+      color: $text-dark-white;
+    }
+    .wrapper {
+      .personal-info {
+        h2 {
+          color: $text-dark-white;
+        }
+        .details {
+          .detail {
+            span {
+              color: $text-dark-white;
+            }
+          }
+          .detail-link {
+            a {
+              color: $text-dark-white;
+            }
+          }
+        }
+        button {
+          color: $text-dark-white;
+        }
+      }
+      .key-features {
+        .feature {
+          box-shadow: 0px 0px 2px 1px #525252;
+          p {
+            color: $text-dark-white;
+          }
+        }
+      }
+    }
+    .separator {
+      border-color: #525252;
+    }
+    .my-skills {
+      h2, h3 {
+        color: $text-dark-white;
+      }
+      .skills-wrapper {
+        .skill {
+          span {
+            color: $text-dark-white;
+          }
+        }
+      }
+    }
+  }
+
   // zrób propsy isLowRes z App.vue do child components
 </style>
