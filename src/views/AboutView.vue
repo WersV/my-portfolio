@@ -4,7 +4,7 @@
     <div class="wrapper">
       <section class="personal-info">
       <h2>Personal Info</h2>
-      <img src="@/assets/img/portfolio-photo-mobile.jpg" alt="portfolio owner">
+      <img src="@/assets/img/portfolio-photo-mobile.jpg" alt="portfolio owner" v-if="isImgShown">
       <section class="details">
         <div class="detail">
           <p>First Name:</p>
@@ -15,7 +15,7 @@
           <span> Botwina</span>
         </div>
         <div class="detail detail-link">
-          <p>Git:</p>
+          <p>GitHub:</p>
           <a href="https://github.com/WersV"> See my profile</a>
         </div>
         <div class="detail detail-link">
@@ -110,10 +110,24 @@
     </section>
   </main>
 </template>
-<script>
-export default {
+<script setup>
+import {ref, onMounted} from 'vue';
+
+const isImgShown = ref(null);
+
+  function showLowResImg() {
+    const width = window.innerWidth;
+    if (width < 575) {
+      isImgShown.value = true;
+    } else {
+      isImgShown.value = false;
+    }
+  }
   
-}
+  onMounted(() => {
+    window.addEventListener('resize', showLowResImg)
+    // showLowResImg()
+  })
 </script>
 <style lang="scss">
 @import '@/assets/_variables.scss';
@@ -129,6 +143,9 @@ export default {
       }
     }
     .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       .personal-info {
         h2 {
           @include about-me-h2;
@@ -153,10 +170,13 @@ export default {
             font-weight: 700;
           }
         }
+        .detail:last-of-type {
+          flex-basis: 70%;
+        }
         .detail-link {
           a {
             text-decoration: none;
-            color: $text-light-gray;
+            color: #FFB400;
             font-weight: 700;
           }
         }
@@ -193,6 +213,7 @@ export default {
     }
     .separator {
       width: 50%;
+      max-width: 1280px;
       border-bottom: 1px solid #d8d8d8;
       margin: 60px auto 22px auto;
     }
@@ -250,11 +271,6 @@ export default {
         .details {
           .detail {
             span {
-              color: $text-dark-white;
-            }
-          }
-          .detail-link {
-            a {
               color: $text-dark-white;
             }
           }
@@ -344,6 +360,30 @@ export default {
           font-size: 30px;
           text-align: center;
         }
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .about-view {
+      .wrapper {
+        flex-wrap: nowrap;
+        max-width: 1280px;
+        margin: 0 auto;
+        .personal-info {
+          flex-basis: 46%;
+        }
+        .key-features {
+          flex-basis: 46%;
+          gap:10px;
+          .feature {
+            flex-basis: 48%;
+          }
+        }
+      }
+      .my-skills {
+        max-width: 1280px;
+        margin: 0 auto;
       }
     }
   }
