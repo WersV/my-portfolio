@@ -8,31 +8,31 @@
       <section class="details">
         <div class="detail">
           <p>First Name:</p>
-          <span>Przemysław</span>
+          <span> Przemysław</span>
         </div>
         <div class="detail">
           <p>Last Name:</p>
-          <span>Botwina</span>
+          <span> Botwina</span>
         </div>
         <div class="detail detail-link">
           <p>Git:</p>
-          <a href="https://github.com/WersV">See my profile</a>
+          <a href="https://github.com/WersV"> See my profile</a>
         </div>
         <div class="detail detail-link">
           <p>Codewars:</p>
-          <a href="https://www.codewars.com/users/WersV/completed">See challenges</a>
+          <a href="https://www.codewars.com/users/WersV/completed"> See challenges</a>
         </div>
         <div class="detail">
           <p>Languages:</p>
-          <span>Polish, English(B2)</span>
+          <span> Polish, English(B2)</span>
         </div>
         <div class="detail">
           <p>Phone:</p>
-          <span>736 245 290</span>
+          <span> 736 245 290</span>
         </div>
         <div class="detail">
           <p>Email:</p>
-          <span>botwina.przemyslaw@gmail.com</span>
+          <span> botwina.przemyslaw@gmail.com</span>
         </div> 
       </section>
       <button>Download CV <span><font-awesome-icon icon="fa-solid fa-arrow-right" /></span></button>
@@ -52,7 +52,7 @@
       </div>
       <div class="feature">
         <span><font-awesome-icon icon="fa-solid fa-infinity" /></span>
-        <p>Bugs fixed</p>
+        <p>Bugs that I fixed</p>
       </div>
       </section>
     </div>
@@ -98,7 +98,13 @@
           <span>Creativity</span>
         </div>
         <div class="skill">
-          <span>Communication</span>
+          <span>Self-learning</span>
+        </div>
+        <div class="skill">
+          <span>Time management</span>
+        </div>
+        <div class="skill">
+          <span>Self-awareness</span>
         </div>
       </div>
     </section>
@@ -159,12 +165,12 @@ export default {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
+      // gap: 10px;
       .feature {
-        flex-basis: 45%;
+        flex-basis: 40%;
         // border: 1px solid #cecece;
-        box-shadow: 0px 0px 2px 1px #cecece;
-        padding: 15px;
+        box-shadow: 0 8px 6px -6px #cecece;
+        padding: 20px;
         span {
           color: #FFB400;
           font-size: 32px;
@@ -172,7 +178,8 @@ export default {
         }
         p {
           color: $text-light-gray;
-          width: 70px;
+          width: 80px;
+          text-transform: uppercase;
         }
       }
       .feature:last-child {
@@ -217,6 +224,7 @@ export default {
           height: 120px;
           border: 2px solid #FFB400;
           border-radius: 50%;
+          text-transform: uppercase;
           span {
             color: $text-light-gray;
             font-weight: 700;
@@ -257,7 +265,7 @@ export default {
       }
       .key-features {
         .feature {
-          box-shadow: 0px 0px 2px 1px #525252;
+          box-shadow: 0 8px 6px -6px black;
           p {
             color: $text-dark-white;
           }
@@ -276,6 +284,65 @@ export default {
           span {
             color: $text-dark-white;
           }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 750px) {
+    .about-view {
+      h1 {
+        font-size: 55px;
+        text-align: center;
+      }
+      .wrapper {
+        .personal-info {
+          h2 {
+            font-size: 30px;
+          }
+          .details {
+            .detail {
+              p {
+                display: inline-block;
+              }
+            }
+          }
+        }
+        .key-features {
+          gap:20px;
+          .feature {
+            padding: 30px;
+            span {
+              font-size: 45px;
+            }
+            p {
+              position: relative;
+              font-size: 17px;
+              padding-left: 50px;
+              width: 125px;
+            }
+            p::before {
+              content: '';
+              display: block;
+              width: 30px;
+              border-bottom: 2px solid #d8d8d8;
+              position: absolute;
+              top: 50%;
+              left: 0;
+              transform: translateY(-50%);
+            }
+          }
+          .feature:last-child {
+            span {
+              font-size: 45px;
+            }
+          }
+        }
+      }
+      .my-skills {
+        h2 {
+          font-size: 30px;
+          text-align: center;
         }
       }
     }
