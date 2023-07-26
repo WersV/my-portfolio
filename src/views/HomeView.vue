@@ -13,23 +13,31 @@
 </template>
 
 <script setup>
-import {ref, onMounted} from 'vue'
-  const isLowRes = ref(null)
+import {useGlobalVariables} from '@/stores/globalVariables'
+import {storeToRefs} from 'pinia';
+  // const isLowRes = ref(null)
 
 
-  function showLowResImg() {
-    const width = window.innerWidth
-    if (width < 1024) {
-      isLowRes.value = true
-    } else {
-      isLowRes.value = false
-    }
-  }
+  // function showLowResImg() {
+  //   const width = window.innerWidth
+  //   if (width < 1024) {
+  //     isLowRes.value = true
+  //   } else {
+  //     isLowRes.value = false
+  //   }
+  // }
   
-  onMounted(() => {
-    window.addEventListener('resize', showLowResImg)
-    showLowResImg()
-  })
+  // onMounted(() => {
+  //   window.addEventListener('resize', showLowResImg)
+  //   showLowResImg()
+  // })
+
+
+  // musisz tutaj dodać globalną zmienną z globalVariables.js i funkcję która będzie zmieniać zm ienną isLowRes
+  const globalVariables = useGlobalVariables();
+  const {isLowRes} = storeToRefs(globalVariables);
+  // console.log(globalVariables.isLowRes);
+
 </script>
 
 <style scoped lang="scss">
