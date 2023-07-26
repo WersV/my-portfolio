@@ -23,10 +23,11 @@ import {
   faBriefcase,
   faEnvelope,
   faLightbulb,
-  faArrowRight
+  faArrowRight,
+  faInfinity
 } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faMoon, faHouse, faUser, faBriefcase, faEnvelope, faLightbulb, faArrowRight)
+library.add(faMoon, faHouse, faUser, faBriefcase, faEnvelope, faLightbulb, faArrowRight, faInfinity)
 
 const app = createApp(App)
 
