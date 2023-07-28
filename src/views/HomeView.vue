@@ -65,7 +65,7 @@ import {storeToRefs} from 'pinia';
     max-width: 550px;
     h1 {
       font-size: 30px;
-      font-weight: 900;
+      font-weight: 700;
       text-transform: uppercase;
       color: #666666;
       margin-bottom: 20px;
