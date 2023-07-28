@@ -150,19 +150,13 @@ export default {
         .detail-link {
           a {
             text-decoration: none;
-<<<<<<< Updated upstream
-            color: #666666;
-=======
             color: $text-yellow;
->>>>>>> Stashed changes
             font-weight: 700;
           }
         }
       }
-<<<<<<< Updated upstream
       @include btn-styles-anim(250px);
     }
-=======
       .key-features {
       display: flex;
       flex-wrap: wrap;
@@ -238,7 +232,5 @@ export default {
     .my-skills .skills-wrapper:last-child {
       margin-bottom: 80px;
     }
->>>>>>> Stashed changes
-  }
   // zrób propsy isLowRes z App.vue do child components
 </style>
