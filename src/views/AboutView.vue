@@ -158,7 +158,7 @@ const isImgShown = ref(null);
         display: flex;
         flex-wrap: wrap;
         margin: 20px 0;
-        gap: 18px;
+        gap: 10px;
         .detail {
           flex-basis: 46%;
           line-height: 24px;
@@ -192,7 +192,11 @@ const isImgShown = ref(null);
         box-shadow: 0 8px 6px -6px #cecece;
         padding: 20px;
         span {
+<<<<<<< Updated upstream
           color: #FFB400;
+=======
+          color: $text-yellow;
+>>>>>>> Stashed changes
           font-size: 32px;
           font-weight: 700;
         }
