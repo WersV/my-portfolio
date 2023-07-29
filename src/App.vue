@@ -18,7 +18,7 @@ onMounted(() => {
   <LightSwitcher/>
   <NavMenu/>
   <router-view v-slot="{ Component }">
-    <transition>
+    <transition mode="out-in">
       <component :is="Component" />
     </transition>
   </router-view>

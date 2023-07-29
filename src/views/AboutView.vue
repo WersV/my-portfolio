@@ -158,7 +158,7 @@ const isImgShown = ref(null);
         display: flex;
         flex-wrap: wrap;
         margin: 20px 0;
-        gap: 18px;
+        gap: 10px;
         .detail {
           flex-basis: 46%;
           line-height: 24px;
@@ -181,36 +181,6 @@ const isImgShown = ref(null);
           }
         }
       }
-      .key-features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      // gap: 10px;
-      .feature {
-        flex-basis: 40%;
-        // border: 1px solid #cecece;
-        box-shadow: 0 8px 6px -6px #cecece;
-        padding: 20px;
-        span {
-          color: #FFB400;
-          font-size: 32px;
-          font-weight: 700;
-        }
-        p {
-          color: $text-light-gray;
-          width: 80px;
-          text-transform: uppercase;
-        }
-      }
-      .feature:last-child {
-        span {
-          font-size: 35px;
-          line-height: 30px;
-        }
-      }
-     }
-      @include btn-styles-anim(250px);
-    }
       .key-features {
       display: flex;
       flex-wrap: wrap;
@@ -286,5 +256,137 @@ const isImgShown = ref(null);
     .my-skills .skills-wrapper:last-child {
       margin-bottom: 80px;
     }
+  }
+
+  //dark mode
+  .dark .about-view {
+    h1 {
+      color: $text-dark-white;
+    }
+    .wrapper {
+      .personal-info {
+        h2 {
+          color: $text-dark-white;
+        }
+        .details {
+          .detail {
+            span {
+              color: $text-dark-white;
+            }
+          }
+        }
+        button {
+          color: $text-dark-white;
+        }
+      }
+      .key-features {
+        .feature {
+          box-shadow: 0 8px 6px -6px black;
+          p {
+            color: $text-dark-white;
+          }
+        }
+      }
+    }
+    .separator {
+      border-color: #525252;
+    }
+    .my-skills {
+      h2, h3 {
+        color: $text-dark-white;
+      }
+      .skills-wrapper {
+        .skill {
+          span {
+            color: $text-dark-white;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 750px) {
+    .about-view {
+      h1 {
+        font-size: 55px;
+        text-align: center;
+      }
+      .wrapper {
+        .personal-info {
+          h2 {
+            font-size: 30px;
+          }
+          .details {
+            .detail {
+              p {
+                display: inline-block;
+              }
+            }
+          }
+        }
+        .key-features {
+          gap:20px;
+          .feature {
+            padding: 30px;
+            span {
+              font-size: 45px;
+            }
+            p {
+              position: relative;
+              font-size: 17px;
+              padding-left: 50px;
+              width: 125px;
+            }
+            p::before {
+              content: '';
+              display: block;
+              width: 30px;
+              border-bottom: 2px solid #d8d8d8;
+              position: absolute;
+              top: 50%;
+              left: 0;
+              transform: translateY(-50%);
+            }
+          }
+          .feature:last-child {
+            span {
+              font-size: 45px;
+            }
+          }
+        }
+      }
+      .my-skills {
+        h2 {
+          font-size: 30px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .about-view {
+      .wrapper {
+        flex-wrap: nowrap;
+        max-width: 1280px;
+        margin: 0 auto;
+        .personal-info {
+          flex-basis: 46%;
+        }
+        .key-features {
+          flex-basis: 46%;
+          gap:10px;
+          .feature {
+            flex-basis: 48%;
+          }
+        }
+      }
+      .my-skills {
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+    }
+  }
+
   // zrób propsy isLowRes z App.vue do child components
 </style>
