@@ -87,17 +87,25 @@
         <span></span>
       </div>
       <h3>Soft</h3>
-      <div>
-        <span>Problem-Soliving</span>
-      </div>
-      <div>
-        <span>Teamwork</span>
-      </div>
-      <div>
-        <span>Creativity</span>
-      </div>
-      <div>
-        <span>Communication</span>
+      <div class="skills-wrapper">
+        <div class="skill">
+          <span>Problem-Solving</span>
+        </div>
+        <div class="skill">
+          <span>Teamwork</span>
+        </div>
+        <div class="skill">
+          <span>Creativity</span>
+        </div>
+        <div class="skill">
+          <span>Self-learning</span>
+        </div>
+        <div class="skill">
+          <span>Time management</span>
+        </div>
+        <div class="skill">
+          <span>Self-awareness</span>
+        </div>
       </div>
     </section>
   </main>
@@ -105,7 +113,10 @@
 <script>
 export default {
   
-}
+  onMounted(() => {
+    window.addEventListener('resize', showLowResImg)
+    showLowResImg()
+  })
 </script>
 <style lang="scss">
 @import '@/assets/_variables.scss';
