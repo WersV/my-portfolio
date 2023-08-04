@@ -2,31 +2,73 @@
   <main class="portfolio-view">
     <h1>My <span>portfolio</span></h1>
     <div class="projects-wrapper">
-      <section class="project">
+      <section class="project" @click="openChildModal('Psychology specialist')">
         <img src="@/assets/img/psychology-specialist-screen.png" alt="psychology specialist website">
         <div class="title">
           <span>Psychology specialists</span>
         </div>
       </section>
-      <section class="project">
+      <section class="project" @click="openChildModal('Ip Adress Tracker')">
         <img src="@/assets/img/ip-tracker-screen.png" alt="ip tracker website">
         <div class="title">
-          <span>Ip tracker</span>
+          <span>Ip Adress tracker</span>
         </div>
       </section>
-      <section class="project">
+      <section class="project" @click="openChildModal('Simple Recipes')">
         <img src="@/assets/img/recipes-screen.png" alt="cooking website">
         <div class="title">
           <span>Simple recipes</span>
         </div>
       </section>
     </div>
+    <Teleport to="#modal">
+      <Transition name="modal">
+        <ModalProject ref="ModalProjectRef" :project-data="projectData"/>
+      </Transition>
+    </Teleport>
   </main>
 </template>
-<script>
-export default {
-  
+<script setup>
+import {ref} from 'vue'
+import ModalProject from '@/components/ModalProject.vue'
+
+const modalDetails = ref({
+  project1:   {
+    header: 'Psychology Specialist',
+    project: 'Website',
+    tools: 'Vue, JS, HTML, SASS, API, Responsiveness, Accessibility',
+    preview: 'https://wersv.github.io/psychology-specialist-website-vue',
+    img: '@/assets/img/psychology-specialist-screen.png',
+    alt: 'psychology specialist website'
+  },
+  project2: {
+    header: 'Ip Adress Tracker',
+    project: 'Web App',
+    tools: 'JS, HTML, SASS, REST API, Responsiveness, Accessibility',
+    preview: 'https://wersv.github.io/ip-adress-tracker',
+    img: '@/assets/img/ip-tracker-screen.png',
+    alt: 'ip tracker website'
+  },
+  project3: {
+    header: 'Simply Recipes',
+    project: 'Website',
+    tools: 'HTML, SASS, Responsiveness, Accessibility',
+    preview: 'https://wersv.github.io/simply-recipes',
+    img: '@/assets/img/recipes-screen.png',
+    alt: 'cooking website'
+  }
+})
+
+const ModalProjectRef = ref(null);
+
+const projectData = ref(null);
+
+const openChildModal = (projectName) => {
+  ModalProjectRef.value.openModal();
+  // console.log(modalDetails.value.project2);
+  projectData.value = modalDetails.value.project2
 }
+
 </script>
 <style lang="scss">
 @import '@/assets/_variables.scss';
@@ -83,5 +125,16 @@ export default {
         }
       }
     }
+  }
+
+  .modal-enter-active,
+  .modal-leave-active {
+    transition: all .2s linear;
+  }
+
+  .modal-enter-from,
+  .modal-leave-to {
+    opacity: 0;
+    transform: scale(1.2);
   }
 </style>
