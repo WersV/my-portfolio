@@ -89,7 +89,7 @@
       <h3>Soft</h3>
       <div class="skills-wrapper">
         <div class="skill">
-          <span>Problem-Soliving</span>
+          <span>Problem-Solving</span>
         </div>
         <div class="skill">
           <span>Teamwork</span>
@@ -126,7 +126,7 @@ const isImgShown = ref(null);
   
   onMounted(() => {
     window.addEventListener('resize', showLowResImg)
-    // showLowResImg()
+    showLowResImg()
   })
 </script>
 <style lang="scss">

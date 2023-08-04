@@ -5,7 +5,6 @@ import {RouterView} from 'vue-router'
 import {onMounted} from 'vue';
 import {useGlobalVariables} from '@/stores/globalVariables'
 
-
 const globalVariables = useGlobalVariables();
 onMounted(() => {
   window.addEventListener('resize', globalVariables.toggleIsLowRes);
@@ -28,6 +27,7 @@ onMounted(() => {
 @import '@/assets/_variables.scss';
 @import './assets//global.css';
 body {
+  // position: fixed;
   background-color: $bcg-color-light;
   // .animation-wrapper {
   //   position: fixed;

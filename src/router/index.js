@@ -30,7 +30,12 @@ const router = createRouter({
       name: 'contact',
       component: ContactView
     }
-  ]
+  ],
+  scrollBehavior() {
+    return {
+      top: 0
+    }
+  }
 })
 
 export default router
