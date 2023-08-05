@@ -2,22 +2,10 @@
   <main class="portfolio-view">
     <h1>My <span>portfolio</span></h1>
     <div class="projects-wrapper">
-      <section class="project" @click="openChildModal('Psychology specialist')">
-        <img src="@/assets/img/psychology-specialist-screen.png" alt="psychology specialist website">
+      <section class="project" @click="openChildModal(value.header)" v-for="value in modalDetails" :key="value.header">
+        <img :src="value.img" :alt="value.alt">
         <div class="title">
-          <span>Psychology specialists</span>
-        </div>
-      </section>
-      <section class="project" @click="openChildModal('Ip Adress Tracker')">
-        <img src="@/assets/img/ip-tracker-screen.png" alt="ip tracker website">
-        <div class="title">
-          <span>Ip Adress tracker</span>
-        </div>
-      </section>
-      <section class="project" @click="openChildModal('Simple Recipes')">
-        <img src="@/assets/img/recipes-screen.png" alt="cooking website">
-        <div class="title">
-          <span>Simple recipes</span>
+          <span>{{ value.header }}</span>
         </div>
       </section>
     </div>
@@ -31,6 +19,9 @@
 <script setup>
 import {ref} from 'vue'
 import ModalProject from '@/components/ModalProject.vue'
+import psychologySpecialistImg from '@/assets/img/psychology-specialist-screen.png'
+import IpTrackerImg from '@/assets/img/ip-tracker-screen.png'
+import RecipesImg from '@/assets/img/recipes-screen.png'
 
 const modalDetails = ref({
   project1:   {
@@ -38,7 +29,7 @@ const modalDetails = ref({
     project: 'Website',
     tools: 'Vue, JS, HTML, SASS, API, Responsiveness, Accessibility',
     preview: 'https://wersv.github.io/psychology-specialist-website-vue',
-    img: '@/assets/img/psychology-specialist-screen.png',
+    img: psychologySpecialistImg,
     alt: 'psychology specialist website'
   },
   project2: {
@@ -46,7 +37,7 @@ const modalDetails = ref({
     project: 'Web App',
     tools: 'JS, HTML, SASS, REST API, Responsiveness, Accessibility',
     preview: 'https://wersv.github.io/ip-adress-tracker',
-    img: '@/assets/img/ip-tracker-screen.png',
+    img: IpTrackerImg,
     alt: 'ip tracker website'
   },
   project3: {
@@ -54,7 +45,7 @@ const modalDetails = ref({
     project: 'Website',
     tools: 'HTML, SASS, Responsiveness, Accessibility',
     preview: 'https://wersv.github.io/simply-recipes',
-    img: '@/assets/img/recipes-screen.png',
+    img: RecipesImg,
     alt: 'cooking website'
   }
 })
@@ -63,10 +54,22 @@ const ModalProjectRef = ref(null);
 
 const projectData = ref(null);
 
+const projectListMap = {
+  'Psychology Specialist': modalDetails.value.project1,
+  'Ip Adress Tracker': modalDetails.value.project2,
+  'Simply Recipes': modalDetails.value.project3
+}
+
 const openChildModal = (projectName) => {
+  // if(projectName === 'Psychology Specialist') {
+  //   projectData.value = modalDetails.value.project1
+  // } else if (projectName === 'Ip Adress Tracker') {
+  //   projectData.value = modalDetails.value.project2
+  // } else if(projectName === 'Simply Recipes') {
+  //   projectData.value = modalDetails.value.project3
+  // }
+  projectData.value = projectListMap[projectName];
   ModalProjectRef.value.openModal();
-  // console.log(modalDetails.value.project2);
-  projectData.value = modalDetails.value.project2
 }
 
 </script>

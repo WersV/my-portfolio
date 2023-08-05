@@ -4,31 +4,31 @@
     <button class="close-btn" @click="isModalOpen = false">
       <font-awesome-icon icon="fa-regular fa-circle-xmark" />
     </button>
-    <h2>{{ projectData.header }}</h2>
+    <h2>{{ ' ' +  projectData.header }}</h2>
     <div class="details-wrapper">
       <div class="modal-detail">
         <p>
           <font-awesome-icon icon="fa-solid fa-folder" />
           Project:
         </p>
-        <span> {{projectData.project}}</span>
+        <span>{{ ' ' + projectData.project}}</span>
       </div>
       <div class="modal-detail">
         <p>
           <font-awesome-icon icon="fa-solid fa-hammer" />
           Tools:
         </p>
-        <span> {{ projectData.tools }}</span>
+        <span>{{ ' ' + projectData.tools }}</span>
       </div>
       <div class="modal-detail">
         <p>
           <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" />
           Preview:
         </p>
-        <a href="#"> test</a>
+        <a :href="projectData.preview"> Click</a>
       </div>
     </div>
-    <img src="@/assets/img/psychology-specialist-screen.png" alt="">
+    <img :src="projectData.img" :alt="projectData.alt">
   </div>  
   </div>
 </template>
