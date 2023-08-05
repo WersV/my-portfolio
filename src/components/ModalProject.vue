@@ -78,15 +78,18 @@ defineExpose({
     .modal {
       position: relative;
       width: 100%;
+      max-width: 650px;
       background-color: white;
       margin: 0 10px;
       padding: 20px;
+      border-radius: 15px;
       .close-btn {
         position: absolute;
         top: 10px;
         right: 10px;
         background-color: transparent;
         border: 0;
+        cursor: pointer;
         .fa-circle-xmark {
           font-size: 30px;
           color: $text-light-gray;
@@ -133,6 +136,25 @@ defineExpose({
         display: block;
         width: 100%;
         margin-top: 30px;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .dark .modal-bg {
+    .modal {
+      background-color: #252525;
+      .close-btn {
+        .fa-circle-xmark {
+          color: $text-dark-white;
+        }
+      }
+      .details-wrapper {
+        .modal-detail {
+          p, span {
+            color: $text-dark-white;
+          }
+        }
       }
     }
   }

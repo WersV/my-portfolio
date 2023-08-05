@@ -1,13 +1,15 @@
 <template>
   <main class="portfolio-view">
-    <h1>My <span>portfolio</span></h1>
-    <div class="projects-wrapper">
-      <section class="project" @click="openChildModal(value.header)" v-for="value in modalDetails" :key="value.header">
-        <img :src="value.img" :alt="value.alt">
-        <div class="title">
-          <span>{{ value.header }}</span>
-        </div>
-      </section>
+    <div class="portfolio-wrapper">
+      <h1>My <span>portfolio</span></h1>
+      <div class="projects-wrapper">
+        <section class="project" @click="openChildModal(value.header)" v-for="value in modalDetails" :key="value.header">
+          <img :src="value.img" :alt="value.alt">
+          <div class="title">
+            <span>{{ value.header }}</span>
+          </div>
+        </section>
+      </div>
     </div>
     <Teleport to="#modal">
       <Transition name="modal">
@@ -41,6 +43,14 @@ const modalDetails = ref({
     alt: 'ip tracker website'
   },
   project3: {
+    header: 'Portfolio',
+    project: 'Website',
+    tools: 'Vue, JS, HTML, SASS, Responsiveness, Accessibility',
+    preview: 'https://wersv.github.io/simply-recipes',
+    img: RecipesImg,
+    alt: 'portfolio website'
+  },
+  project4: {
     header: 'Simply Recipes',
     project: 'Website',
     tools: 'HTML, SASS, Responsiveness, Accessibility',
@@ -57,7 +67,8 @@ const projectData = ref(null);
 const projectListMap = {
   'Psychology Specialist': modalDetails.value.project1,
   'Ip Adress Tracker': modalDetails.value.project2,
-  'Simply Recipes': modalDetails.value.project3
+  'Portfolio': modalDetails.value.project3,
+  'Simply Recipes': modalDetails.value.project4
 }
 
 const openChildModal = (projectName) => {
@@ -89,18 +100,27 @@ const openChildModal = (projectName) => {
       }
     }
     .projects-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       margin-bottom: 100px;
       width: 100%;
       .project {
         position: relative;
         width: 100%;
+        max-width: 350px;
+        max-height: 175px;
         margin-bottom: 20px;
         overflow: hidden;
+        border-radius: 10px;
         img {
           display: block;
           width:100%;
-          height: calc(100vw * 0.5);
+          height: calc(100vw * 0.6);
+          max-width: 350px;
+          max-height: 175px;
           border-radius: 10px;
+          filter: blur(4px);
         }
         .title {
           display: flex;
@@ -125,6 +145,73 @@ const openChildModal = (projectName) => {
         }
         .title:hover, .title:hover span {
           opacity: 0;
+        }
+      }
+    }
+  }
+
+  // dark mode ==============
+  .dark .portfolio-view {
+    h1 {
+      color: $text-dark-white;
+    }
+  }
+
+  @media(min-width: 575px) {
+    .portfolio-view {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      h1 {
+        flex-basis: 100%;
+        font-size: 56px;
+        text-align: center;
+        span {
+          display: inline;
+        }
+      }
+      .projects-wrapper {
+        gap: 20px;
+        width: 570px;
+        .project {
+          // flex-basis: 48%;
+          width: 250px;
+          height: 150px;
+          margin: 0;
+          img {
+            width: 250px;
+            height: 150px;
+          }
+        }
+      }
+    }
+  }
+
+  @media(min-width: 1060px) {
+    .portfolio-view {
+      margin: 0 20px;
+      .projects-wrapper {
+        max-width: 1280px;
+        // margin: 0 auto;
+        width: 100%;
+        .project {
+          max-width: 500px;
+          max-height: 300px;
+          width: 500px;
+          height: 300px;
+          img {
+            max-width: 500px;
+            max-height: 300px;
+            width: 500px;
+            height: 300px;
+          }
+          .title {
+            span {
+              font-size: 25px
+            }
+          }
         }
       }
     }
