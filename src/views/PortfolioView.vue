@@ -84,7 +84,7 @@ const openChildModal = (projectName) => {
 }
 
 </script>
-<style lang="scss">
+<style scoped lang="scss">
 @import '@/assets/_variables.scss';
   .portfolio-view {
     margin: 0 10px;

@@ -28,7 +28,7 @@ $text-yellow: #FFB400;
   margin: 0 auto;
 }
 
-@mixin btn-styles-anim($width) {
+@mixin btn-styles-anim($width, $padding: 50px) {
   button {
     position: relative;
     display: flex;
@@ -39,7 +39,7 @@ $text-yellow: #FFB400;
     background-color: transparent;
     border: 1px solid #FFB400;
     border-radius: 30px;
-    padding: 15px 20px 15px 50px;
+    padding: 15px 20px 15px $padding;
     margin-bottom: 70px;
     text-align: center;
     color: #666666;
@@ -69,7 +69,7 @@ $text-yellow: #FFB400;
       width: $width;
       height: 100%;
       background-color: #FFB400;
-      border-radius: 20px;
+      // border-radius: 20px;
       z-index: -1;
       transition: .3s linear;
     }

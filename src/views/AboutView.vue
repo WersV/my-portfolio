@@ -32,10 +32,10 @@
         </div>
         <div class="detail">
           <p>Email:</p>
-          <span> botwina.przemyslaw@gmail.com</span>
+          <span> botwina.przemyslaw&#8203;@gmail.com</span>
         </div> 
       </section>
-      <button>Download CV <span><font-awesome-icon icon="fa-solid fa-arrow-right" /></span></button>
+      <button>Download CV <span><font-awesome-icon icon="fa-solid fa-download" /></span></button>
       </section>
       <section class="key-features">
       <div class="feature">
@@ -171,7 +171,7 @@ const isImgShown = ref(null);
           }
         }
         .detail:last-of-type {
-          flex-basis: 70%;
+          flex-basis: 100%;
         }
         .detail-link {
           a {
