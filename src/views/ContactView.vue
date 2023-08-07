@@ -9,23 +9,45 @@
       <p>Feel free to contact me through the form whether you have a specific job opportunity. Let's connect, and I'll be thrilled to demonstrate how I can be an invaluable asset to your team.</p>
     </section>
     <div class="contact-form-wrapper">
-      <form method="POST">
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name">
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email">
-        <label for="subject">Subject:</label>
-        <input type="text" name="submit" id="submit">
+      <form @submit="formSubmit" method="POST" action="https://formspree.io/f/meqbajke">
+        <BaseInput v-model="name" label="Name:" forAttr="name"/>
+        <BaseInput v-model="email" type="email" label="Email:" forAttr="email"/>
+        <span v-if="showEmailAllert">Wrong email!</span>
+        <BaseInput v-model="subject" label="Subject:" forAttr="subject"/>
         <label for="message">Message:</label>
-        <textarea name="message" id="message" cols="30" rows="7"></textarea>
+        <textarea v-model="message" name="message" id="message" cols="30" rows="7" required></textarea>
+        <span v-if="showMessageAllert">Enter at least 5 characters</span>
         <button>Send message<span><font-awesome-icon icon="fa-solid fa-paper-plane" /></span></button>
+        <!-- formspree do wysyłania maila -->
+        <!-- action="https://formspree.io/f/meqbajke" -->
       </form>
     </div>
   </main>
 </template>
-<script>
-export default {
-  
+<script setup>
+import BaseInput from '@/components/BaseInput.vue'
+import {ref} from 'vue';
+
+const name = ref('');
+const email = ref('');
+const subject = ref('');
+const message = ref('');
+const isEmailCorrect = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const showEmailAllert = ref(false);
+const showMessageAllert = ref(false);
+const formSubmit = (e) => {
+  if(!isEmailCorrect.test(email.value)) {
+    showEmailAllert.value = true;
+    e.preventDefault();
+  } else if (isEmailCorrect.test(email.value)){
+    showEmailAllert.value = false;
+  }
+  if(message.value.length < 5) {
+    showMessageAllert.value = true;
+    e.preventDefault();
+  } else if (message.value.length >= 5) {
+    showMessageAllert.value = false;
+  }
 }
 </script>
 <style scoped lang="scss">
@@ -62,13 +84,17 @@ export default {
         flex-wrap: wrap;
         justify-content: center;
         text-align: center;
+        span {
+          width: 100%;
+          color: red;
+        }
         label {
           flex-basis: 100%;
           color: $text-light-gray;
           font-size: 20px;
           margin: 5px 0;
         }
-        input, textarea {
+        textarea {
           font-size: 18px;
           padding: 10px;
           color: $text-light-gray;
