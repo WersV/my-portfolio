@@ -5,9 +5,15 @@
       <img src="@/assets/img/portfolio-photo-mobile.jpg" alt="portfolio owner" v-if="isLowRes">
     </header>
     <section class="home-info">
-      <h1><span>I'm Przemysław Botwina <br/></span>web developer</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, nisi. Nobis minima repudiandae explicabo deserunt nisi quibusdam neque dolor porro, harum quisquam fuga molestiae facilis quidem! Velit aliquid dignissimos cumque.</p>
-      <button>GitHub <span><font-awesome-icon icon="fa-solid fa-arrow-right" /></span></button> 
+      <div class="h1-span-container">
+        <h1>I'm Przemysław Botwina</h1>
+        <span>Aspiring Junior Web Developer</span>  
+        <span>Creative Problem Solver</span>  
+        <span>Passionate about Coding</span>
+      </div>  
+      <p>Hello there! I'm Przemysław Botwina, and I'm thrilled to have you on my portfolio page. As an aspiring Junior Web Developer, I'm on a mission to turn innovative ideas into functional and visually stunning websites. Here, you'll get a glimpse of my skills, projects, and a little insight into what drives my passion for web development.</p>
+      <button onclick="window.open('https://github.com/WersV','_blank');">GitHub <span><font-awesome-icon icon="fa-solid fa-arrow-right" /></span></button>
+        <!-- dodaj do about-view rozdział ze swoimi zainteresowaniami -->
     </section>
   </main>
 </template>
@@ -15,29 +21,8 @@
 <script setup>
 import {useGlobalVariables} from '@/stores/globalVariables'
 import {storeToRefs} from 'pinia';
-  // const isLowRes = ref(null)
-
-
-  // function showLowResImg() {
-  //   const width = window.innerWidth
-  //   if (width < 1024) {
-  //     isLowRes.value = true
-  //   } else {
-  //     isLowRes.value = false
-  //   }
-  // }
-  
-  // onMounted(() => {
-  //   window.addEventListener('resize', showLowResImg)
-  //   showLowResImg()
-  // })
-
-
-  // musisz tutaj dodać globalną zmienną z globalVariables.js i funkcję która będzie zmieniać zm ienną isLowRes
   const globalVariables = useGlobalVariables();
   const {isLowRes} = storeToRefs(globalVariables);
-  // console.log(globalVariables.isLowRes);
-
 </script>
 
 <style scoped lang="scss">
@@ -63,14 +48,25 @@ import {storeToRefs} from 'pinia';
     text-align: center;
     position: relative;
     max-width: 550px;
-    h1 {
-      font-size: 30px;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: #666666;
+    .h1-span-container {
       margin-bottom: 20px;
-      span {
+      h1 {
         color: #FFB400;
+        font-size: 30px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+      span {
+        position: relative;
+        display: block;
+        color: #666666;
+        font-size: 20px;
+        margin-bottom: 5px;
+        // text-decoration: underline dotted;
+      }
+      span:before {
+        content: '\1F449';
       }
     }
     p {
@@ -91,7 +87,7 @@ import {storeToRefs} from 'pinia';
 //dark mode
 .dark .home-view {
   .home-info {
-    h1, p, button {
+    h1, span, p, button {
       color: white;
     }
   }
@@ -108,8 +104,10 @@ import {storeToRefs} from 'pinia';
 @media (min-width: 570px) {
   .home-view {
     .home-info {
-      h1 {
-        font-size: 37px;
+      .h1-span-container {
+        h1 {
+          font-size: 37px;
+        }
       }
     }
   }
@@ -147,8 +145,10 @@ import {storeToRefs} from 'pinia';
       text-align: left;
       justify-content: flex-start;
       margin-right: 50px;
-      h1 {
-        font-size: 42px;
+      .h1-span-container {
+        h1 {
+          font-size: 42px;
+        }
       }
       p {
         line-height: 2;
