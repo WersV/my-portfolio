@@ -39,7 +39,7 @@
       </section>
       <section class="key-features">
       <div class="feature">
-        <span>2+</span>
+        <span>1+</span>
         <p>years of experience</p>
       </div>
       <div class="feature">
@@ -107,6 +107,15 @@
           <span>Self-awareness</span>
         </div>
       </div>
+    </section>
+    <section class="details-about-me">
+      <h2>The Reason Behind Choosing Programming</h2>
+      <p>I want to become a junior web developer because I really like making websites that are simple for people to use and fun to enjoy. I've always been interested in programming because it's useful and lets me make things that work well.
+      </p>
+      <p>To me, programming is like a handy tool for building and improving websites. Every bit of code I write is like a brick in a building project - it adds up to make something work well. I really enjoy fixing problems and figuring things out, and that keeps me eager to learn and get better.
+      </p>
+      <p>In a world where we rely a lot on technology, programming lets me do something important. I can make websites that are easy for people to use, so they can navigate and do stuff online without any problems. This makes me feel like I'm doing something really worthwhile, and it keeps me working hard to get better and learn the best ways to do things.
+      </p>
     </section>
   </main>
 </template>
@@ -253,8 +262,17 @@ const isImgShown = ref(null);
         }
       }
     }
-    .my-skills .skills-wrapper:last-child {
+    .details-about-me {
+      max-width: 700px;
       margin-bottom: 80px;
+      h2 {
+        @include about-me-h2;
+      }
+      p {
+        color: $text-light-gray;
+        // text-align:center;
+        margin-bottom: 10px;
+      }
     }
   }
 
@@ -301,6 +319,19 @@ const isImgShown = ref(null);
             color: $text-dark-white;
           }
         }
+      }
+    }
+    .details-about-me {
+      h2, p {
+        color: $text-dark-white;
+      }
+    }
+  }
+
+  @media(min-width: 575px) {
+    .about-view {
+      .details-about-me { 
+        margin: 0 auto;
       }
     }
   }
@@ -359,6 +390,13 @@ const isImgShown = ref(null);
         h2 {
           font-size: 30px;
           text-align: center;
+        }
+      }
+      .details-about-me { 
+        text-align: center;
+        margin-top: 70px;
+        h2 {
+          font-size: 30px;
         }
       }
     }
