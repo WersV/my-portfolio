@@ -9,17 +9,15 @@
       <p>Feel free to contact me through the form whether you have a specific job opportunity. Let's connect, and I'll be thrilled to demonstrate how I can be an invaluable asset to your team.</p>
     </section>
     <div class="contact-form-wrapper">
-      <form @submit="formSubmit" method="POST" action="https://formspree.io/f/meqbajke">
+      <form ref="msgForm" @submit="formSubmit" method="POST" action="https://formspree.io/f/meqbajke">
         <BaseInput v-model="name" label="Name:" forAttr="name"/>
         <BaseInput v-model="email" type="email" label="Email:" forAttr="email"/>
-        <span v-if="showEmailAllert">Wrong email!</span>
+        <span v-if="showEmailAlert">Wrong email!</span>
         <BaseInput v-model="subject" label="Subject:" forAttr="subject"/>
         <label for="message">Message:</label>
         <textarea v-model="message" name="message" id="message" cols="30" rows="7" required></textarea>
-        <span v-if="showMessageAllert">Enter at least 5 characters</span>
+        <span v-if="showMessageAlert">Enter at least 5 characters</span>
         <button>Send message<span><font-awesome-icon icon="fa-solid fa-paper-plane" /></span></button>
-        <!-- formspree do wysyłania maila -->
-        <!-- action="https://formspree.io/f/meqbajke" -->
       </form>
     </div>
   </main>
@@ -32,23 +30,34 @@ const name = ref('');
 const email = ref('');
 const subject = ref('');
 const message = ref('');
+const msgForm = ref(null)
 const isEmailCorrect = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-const showEmailAllert = ref(false);
-const showMessageAllert = ref(false);
+const showEmailAlert = ref(false);
+const showMessageAlert = ref(false);
+const clearValues = () => {
+  name.value = '';
+  email.value = '';
+  subject.value = '';
+  message.value = '';
+}
 const formSubmit = (e) => {
-  if(!isEmailCorrect.test(email.value)) {
-    showEmailAllert.value = true;
-    e.preventDefault();
-  } else if (isEmailCorrect.test(email.value)){
-    showEmailAllert.value = false;
-  }
   if(message.value.length < 5) {
-    showMessageAllert.value = true;
+    showMessageAlert.value = true;
     e.preventDefault();
   } else if (message.value.length >= 5) {
-    showMessageAllert.value = false;
+    showMessageAlert.value = false;
+  }
+  if(!isEmailCorrect.test(email.value)) {
+    showEmailAlert.value = true;
+    e.preventDefault();
+  } else if (isEmailCorrect.test(email.value)){
+    showEmailAlert.value = false;
+  }
+  if(!showEmailAlert.value && !showMessageAlert.value) {
+    setTimeout(clearValues);
   }
 }
+
 </script>
 <style scoped lang="scss">
 @import '@/assets/_variables.scss';
@@ -72,11 +81,11 @@ const formSubmit = (e) => {
     .msg-to-recruiter {
       max-width: 500px;
       margin-bottom: 50px;
-        p {
-          color: $text-light-gray;
-          text-align:center;
-        }
+      p {
+        color: $text-light-gray;
+        text-align:center;
       }
+    }
     .contact-form-wrapper {
       max-width: 500px;
       form {
