@@ -24,6 +24,7 @@ import ModalProject from '@/components/ModalProject.vue'
 import psychologySpecialistImg from '@/assets/img/psychology-specialist-screen.png'
 import IpTrackerImg from '@/assets/img/ip-tracker-screen.png'
 import RecipesImg from '@/assets/img/recipes-screen.png'
+import PortfolioImg from '@/assets/img/portfolio-screen.png'
 
 const modalDetails = ref({
   project1:   {
@@ -47,7 +48,7 @@ const modalDetails = ref({
     project: 'Website',
     tools: 'Vue, JS, HTML, SASS, Responsiveness, Accessibility',
     preview: 'https://wersv.github.io/simply-recipes',
-    img: RecipesImg,
+    img: PortfolioImg,
     alt: 'portfolio website'
   },
   project4: {
