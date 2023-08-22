@@ -9,7 +9,7 @@
       <p>Feel free to contact me through the form whether you have a specific job opportunity. Let's connect, and I'll be thrilled to demonstrate how I can be an invaluable asset to your team.</p>
     </section>
     <div class="contact-form-wrapper">
-      <form ref="msgForm" @submit="formSubmit" method="POST" action="https://formspree.io/f/meqbajke">
+      <form ref="msgForm" @submit="formSubmit" method="POST" action="https://formspree.io/f/xrgwqqjg">
         <BaseInput v-model="name" label="Name:" forAttr="name"/>
         <BaseInput v-model="email" type="email" label="Email:" forAttr="email"/>
         <span v-if="showEmailAlert">Wrong email!</span>
