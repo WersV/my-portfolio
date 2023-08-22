@@ -2,7 +2,7 @@
   <main class="home-view">
     <div class="css-el"></div>
     <header class="home-img-container">
-      <img src="@/assets/img/portfolio-photo.jpg" alt="portfolio owner" v-if="isLowRes">
+      <img src="@/assets/img/portfolio-photo.jpeg" alt="portfolio owner" v-if="isLowRes">
     </header>
     <section class="home-info">
       <div class="h1-span-container">
@@ -133,7 +133,7 @@ import {storeToRefs} from 'pinia';
     .home-img-container {
       width: 35%;
       height: 80vh;
-      background-image: url('@/assets/img/portfolio-photo.jpg');
+      background-image: url('@/assets/img/portfolio-photo.jpeg');
       background-size: cover;
       background-position-x: center;
       border-radius: 30px;
