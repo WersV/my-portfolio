@@ -2,7 +2,7 @@
   <main class="home-view">
     <div class="css-el"></div>
     <header class="home-img-container">
-      <img src="@/assets/img/portfolio-photo-mobile.jpg" alt="portfolio owner" v-if="isLowRes">
+      <img src="@/assets/img/portfolio-photo.jpg" alt="portfolio owner" v-if="isLowRes">
     </header>
     <section class="home-info">
       <div class="h1-span-container">
@@ -32,7 +32,7 @@ import {storeToRefs} from 'pinia';
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 20px 0 20px;
+  margin: 90px 20px 0 20px;
   height: 100vh;
   box-sizing: border-box;
   .home-img-container {
@@ -133,7 +133,7 @@ import {storeToRefs} from 'pinia';
     .home-img-container {
       width: 35%;
       height: 80vh;
-      background-image: url('@/assets/img/portfolio-photo-desktop.jpg');
+      background-image: url('@/assets/img/portfolio-photo.jpg');
       background-size: cover;
       background-position-x: center;
       border-radius: 30px;

@@ -47,7 +47,7 @@ const modalDetails = ref({
     header: 'Portfolio',
     project: 'Website',
     tools: 'Vue, JS, HTML, SASS, Responsiveness, Accessibility',
-    preview: 'https://wersv.github.io/simply-recipes',
+    preview: 'https://wersv.github.io/my-portfolio/',
     img: PortfolioImg,
     alt: 'portfolio website'
   },

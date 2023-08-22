@@ -4,7 +4,7 @@
     <div class="wrapper">
       <section class="personal-info">
       <h2>Personal Info</h2>
-      <img src="@/assets/img/portfolio-photo-mobile.jpg" alt="portfolio owner" v-if="isImgShown">
+      <img src="@/assets/img/portfolio-photo.jpg" alt="portfolio owner" v-if="isImgShown">
       <section class="details">
         <div class="detail">
           <p>First Name:</p>
@@ -16,11 +16,11 @@
         </div>
         <div class="detail detail-link">
           <p>GitHub:</p>
-          <a href="https://github.com/WersV"> See my profile</a>
+          <a href="https://github.com/WersV" target="_blank" about> See my profile</a>
         </div>
         <div class="detail detail-link">
           <p>Codewars:</p>
-          <a href="https://www.codewars.com/users/WersV/completed"> See challenges</a>
+          <a href="https://www.codewars.com/users/WersV/completed" target="_blank"> See challenges</a>
         </div>
         <div class="detail">
           <p>Languages:</p>
@@ -35,7 +35,7 @@
           <span> botwina.przemyslaw&#8203;@gmail.com</span>
         </div> 
       </section>
-      <button>Download CV <span><font-awesome-icon icon="fa-solid fa-download" /></span></button>
+      <!-- <button>Download CV <span><font-awesome-icon icon="fa-solid fa-download" /></span></button> -->
       </section>
       <section class="key-features">
       <div class="feature">
@@ -218,7 +218,7 @@ const isImgShown = ref(null);
         }
       }
      }
-      @include btn-styles-anim(250px);
+      // @include btn-styles-anim(250px);
     }
     .separator {
       width: 50%;
@@ -293,9 +293,9 @@ const isImgShown = ref(null);
             }
           }
         }
-        button {
-          color: $text-dark-white;
-        }
+        // button {
+        //   color: $text-dark-white;
+        // }
       }
       .key-features {
         .feature {
