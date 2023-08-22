@@ -21,8 +21,8 @@
 <script setup>
 import {ref} from 'vue'
 import ModalProject from '@/components/ModalProject.vue'
-import psychologySpecialistImg from '@/assets/img/psychology-specialist-screen.png'
-import IpTrackerImg from '@/assets/img/ip-tracker-screen.png'
+import psychologySpecialistImg from '../assets/img/psychology-specialist-screen.png'
+import IpTrackerImg from '../assets/img/ip-tracker-screen.png'
 import RecipesImg from '@/assets/img/recipes-screen.png'
 import PortfolioImg from '@/assets/img/portfolio-screen.png'
 
