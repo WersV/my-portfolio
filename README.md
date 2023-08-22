@@ -6,7 +6,7 @@ Hello there! I'm Przemysław Botwina, and I'm thrilled to have you on my GitHub.
 
 ## Screenshot
 
-![](./screenshots/pportfolio-screen-desktop.png)
+![](./screenshots/portfolio-screen-desktop.png)
 ![](./screenshots/portfolio-screen-mobile.png)
 
 ## Links
