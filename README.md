@@ -1,35 +1,19 @@
-# my-portfolio
+# My portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+## Overview
 
-## Recommended IDE Setup
+Hello there! I'm Przemysław Botwina, and I'm thrilled to have you on my GitHub. As an aspiring Junior Web Developer, I'm on a mission to turn innovative ideas into functional and visually stunning websites. Here, you'll get a glimpse of my skills, projects, and a little insight into what drives my passion for web development.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Screenshot
 
-## Customize configuration
+![](./screenshots/pportfolio-screen-desktop.png)
+![](./screenshots/portfolio-screen-mobile.png)
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Links
 
-## Project Setup
+- GitHub repository: [https://github.com/WersV/my-portfolio](https://github.com/WersV/my-portfolio)
+- GitHub Pages: [https://wersv.github.io/my-portfolio/](https://wersv.github.io/my-portfolio/)
 
-```sh
-npm install
-```
+## Author
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- My GitHub profile - [Przemysław Botwina](https://github.com/WersV)
