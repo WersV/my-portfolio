@@ -48,7 +48,6 @@ onClickOutside(modal, () => (isModalOpen.value = false))
 watch(isModalOpen, () => {
   if (isModalOpen.value) {
   document.body.style.overflowY = "hidden";
-  // console.log(props);
 } else {
   document.body.style.overflowY = "scroll";
 }
@@ -56,7 +55,6 @@ watch(isModalOpen, () => {
 
 const openModal = () => {
   isModalOpen.value = true;
-  // console.log('openModal dziala');
 }
 defineExpose({
   openModal,

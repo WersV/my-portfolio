@@ -27,18 +27,7 @@ onMounted(() => {
 @import '@/assets/_variables.scss';
 @import './assets//global.css';
 body {
-  // position: fixed;
   background-color: $bcg-color-light;
-  // .animation-wrapper {
-  //   position: fixed;
-  //   top: 0;
-  //   transform: translateY(0%);
-  //   width: 100%;
-  //   height: 100vh;
-  //   background-color: #272727;
-  //   z-index: 3;
-  //   transition: margin-top 1s;
-  // }
 }
 
 .v-enter-active,

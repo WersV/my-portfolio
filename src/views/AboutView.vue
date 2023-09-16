@@ -194,10 +194,8 @@ const isImgShown = ref(null);
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      // gap: 10px;
       .feature {
         flex-basis: 40%;
-        // border: 1px solid #cecece;
         box-shadow: 0 8px 6px -6px #cecece;
         padding: 20px;
         span {
@@ -218,7 +216,6 @@ const isImgShown = ref(null);
         }
       }
      }
-      // @include btn-styles-anim(250px);
     }
     .separator {
       width: 50%;
@@ -270,7 +267,6 @@ const isImgShown = ref(null);
       }
       p {
         color: $text-light-gray;
-        // text-align:center;
         margin-bottom: 10px;
       }
     }
@@ -293,9 +289,6 @@ const isImgShown = ref(null);
             }
           }
         }
-        // button {
-        //   color: $text-dark-white;
-        // }
       }
       .key-features {
         .feature {
@@ -425,6 +418,4 @@ const isImgShown = ref(null);
       }
     }
   }
-
-  // zrób propsy isLowRes z App.vue do child components
 </style>

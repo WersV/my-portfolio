@@ -7,16 +7,10 @@
   </aside>
 </template>
 <script setup>
-// import {useThemeModeStore} from '@/stores/themeMode'
 import { useDark, useToggle } from '@vueuse/core'
 
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
-// const themeMode = useThemeModeStore();
-// function changeMode() {
-//   console.log(themeMode.isDarkMode);
-//   themeMode.changeMode()
-// }
 
 </script>
 <style lang="scss">

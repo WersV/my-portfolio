@@ -10,10 +10,10 @@
     </section>
     <div class="contact-form-wrapper">
       <form ref="msgForm" @submit="formSubmit" method="POST" action="https://formspree.io/f/xrgwqqjg">
-        <BaseInput v-model="name" label="Name:" forAttr="name"/>
-        <BaseInput v-model="email" type="email" label="Email:" forAttr="email"/>
+        <AppInput v-model="name" label="Name:" forAttr="name"/>
+        <AppInput v-model="email" type="email" label="Email:" forAttr="email"/>
         <span v-if="showEmailAlert">Wrong email!</span>
-        <BaseInput v-model="subject" label="Subject:" forAttr="subject"/>
+        <AppInput v-model="subject" label="Subject:" forAttr="subject"/>
         <label for="message">Message:</label>
         <textarea v-model="message" name="message" id="message" cols="30" rows="7" required></textarea>
         <span v-if="showMessageAlert">Enter at least 5 characters</span>
@@ -23,7 +23,7 @@
   </main>
 </template>
 <script setup>
-import BaseInput from '@/components/BaseInput.vue'
+import AppInput from '@/components/AppInput.vue'
 import {ref} from 'vue';
 
 const name = ref('');
@@ -169,8 +169,6 @@ const formSubmit = (e) => {
       margin: 0 auto 100px auto;
       .msg-to-recruiter {
         align-self: center;
-        // flex-basis: 35%;
-        // max-width: 40%;
         margin: 0 20px 0 20px;
         p {
           font-size: 20px;

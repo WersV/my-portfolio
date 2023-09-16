@@ -13,7 +13,6 @@
       </div>  
       <p>Hello there! I'm Przemysław Botwina, and I'm thrilled to have you on my portfolio page. As an aspiring Junior Web Developer, I'm on a mission to turn innovative ideas into functional and visually stunning websites. Here, you'll get a glimpse of my skills, projects, and a little insight into what drives my passion for web development.</p>
       <button onclick="window.open('https://github.com/WersV','_blank');">GitHub <span><font-awesome-icon icon="fa-solid fa-arrow-right" /></span></button>
-        <!-- dodaj do about-view rozdział ze swoimi zainteresowaniami -->
     </section>
   </main>
 </template>
@@ -63,7 +62,6 @@ import {storeToRefs} from 'pinia';
         color: #666666;
         font-size: 20px;
         margin-bottom: 5px;
-        // text-decoration: underline dotted;
       }
       span:before {
         content: '\1F449';
@@ -77,12 +75,6 @@ import {storeToRefs} from 'pinia';
     @include btn-styles-anim(200px);
   }
 }
-
-// @media (max-height: 730px) {
-//   .home-view {
-//     margin: 30px 20px 0 20px;
-//   }
-// }
 
 //dark mode
 .dark .home-view {

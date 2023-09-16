@@ -13,14 +13,14 @@
     </div>
     <Teleport to="#modal">
       <Transition name="modal">
-        <ModalProject ref="ModalProjectRef" :project-data="projectData"/>
+        <AppModal ref="ModalProjectRef" :project-data="projectData"/>
       </Transition>
     </Teleport>
   </main>
 </template>
 <script setup>
 import {ref} from 'vue'
-import ModalProject from '@/components/ModalProject.vue'
+import AppModal from '@/components/AppModal.vue'
 import psychologySpecialistImg from '../assets/img/psychology-specialist-screen.png'
 import IpTrackerImg from '../assets/img/ip-tracker-screen.png'
 import RecipesImg from '@/assets/img/recipes-screen.png'
@@ -73,13 +73,6 @@ const projectListMap = {
 }
 
 const openChildModal = (projectName) => {
-  // if(projectName === 'Psychology Specialist') {
-  //   projectData.value = modalDetails.value.project1
-  // } else if (projectName === 'Ip Adress Tracker') {
-  //   projectData.value = modalDetails.value.project2
-  // } else if(projectName === 'Simply Recipes') {
-  //   projectData.value = modalDetails.value.project3
-  // }
   projectData.value = projectListMap[projectName];
   ModalProjectRef.value.openModal();
 }
@@ -177,7 +170,6 @@ const openChildModal = (projectName) => {
         gap: 20px;
         width: 570px;
         .project {
-          // flex-basis: 48%;
           width: 250px;
           height: 150px;
           margin: 0;
@@ -195,7 +187,6 @@ const openChildModal = (projectName) => {
       margin: 0 20px;
       .projects-wrapper {
         max-width: 1280px;
-        // margin: 0 auto;
         width: 100%;
         .project {
           max-width: 500px;

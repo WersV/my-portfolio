@@ -19,7 +19,6 @@ import { RouterLink } from 'vue-router'
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  // height: 55px;
   padding: 8px;
   background-color: $nav-bcg-light;
   z-index: 2;
@@ -83,7 +82,7 @@ import { RouterLink } from 'vue-router'
     }
   }
   }
-  // dark mode
+  // dark mode min-1024px
   .dark .sidebar {
     background-color: transparent;
   }
