@@ -1,44 +1,35 @@
 <template>
   <div class="modal-bg" v-if="isModalOpen">
-  <div class="modal" ref="modal">
+  <div 
+    class="modal" 
+    ref="modal"
+    role="dialog"
+    aria-labelledby="dialogTitle"
+    aria-describedby="dialogDesc"
+  >
     <button class="close-btn" @click="isModalOpen = false">
       <font-awesome-icon icon="fa-regular fa-circle-xmark" />
     </button>
-    <h2>{{ ' ' +  projectData.header }}</h2>
-    <div class="details-wrapper">
+    <slot name="h2">Modal Title
+    </slot>
+    <div id="dialogDesc" class="details-wrapper">
       <div class="modal-detail">
-        <p>
-          <font-awesome-icon icon="fa-solid fa-folder" />
-          Project:
-        </p>
-        <span>{{ ' ' + projectData.project}}</span>
+        <slot name="detailContent1"></slot>
       </div>
       <div class="modal-detail">
-        <p>
-          <font-awesome-icon icon="fa-solid fa-hammer" />
-          Tools:
-        </p>
-        <span>{{ ' ' + projectData.tools }}</span>
+        <slot name="detailContent2"></slot>
       </div>
       <div class="modal-detail">
-        <p>
-          <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" />
-          Preview:
-        </p>
-        <a :href="projectData.preview"> Click</a>
+        <slot name="detailContent3"></slot>
       </div>
     </div>
-    <img :src="projectData.img" :alt="projectData.alt">
+    <slot name="img"></slot>
   </div>  
   </div>
 </template>
 <script setup>
-import {ref, watch} from 'vue'
-import {onClickOutside} from '@vueuse/core'
-
-const props = defineProps({
-  projectData: Object
-})
+import {ref, watch} from 'vue';
+import {onClickOutside} from '@vueuse/core';
 
 const modal = ref(null)
 const isModalOpen = ref(false)

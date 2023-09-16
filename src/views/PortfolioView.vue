@@ -13,7 +13,35 @@
     </div>
     <Teleport to="#modal">
       <Transition name="modal">
-        <AppModal ref="ModalProjectRef" :project-data="projectData"/>
+        <AppModal ref="ModalProjectRef" :project-data="projectData"> 
+          <template #h2>
+            <h2 id="dialogTitle">{{ ' ' +  projectData.header }}</h2>
+          </template>
+          <template #detailContent1>
+          <p>
+            <font-awesome-icon icon="fa-solid fa-folder" />
+            Project:
+          </p>
+          <span>{{ ' ' + projectData.project}}</span>
+          </template>
+          <template #detailContent2>
+            <p>
+              <font-awesome-icon icon="fa-solid fa-hammer" />
+              Tools:
+            </p>
+            <span>{{ ' ' + projectData.tools }}</span>
+          </template>
+          <template #detailContent3>
+            <p>
+              <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" />
+              Preview:
+            </p>
+            <a :href="projectData.preview"> Click</a>
+          </template>
+          <template #img>
+            <img :src="projectData.img" :alt="projectData.alt">
+          </template>
+        </AppModal>
       </Transition>
     </Teleport>
   </main>
