@@ -26,6 +26,8 @@ $text-yellow: #FFB400;
   height: 250px;
   border-radius: 50%;
   margin: 0 auto;
+  object-fit: cover;
+  object-position: 50% 35%;
 }
 
 @mixin btn-styles-anim($width, $padding: 50px) {
