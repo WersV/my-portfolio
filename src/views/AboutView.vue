@@ -35,7 +35,6 @@
           <span> botwina.przemyslaw&#8203;@gmail.com</span>
         </div> 
       </section>
-      <!-- <button>Download CV <span><font-awesome-icon icon="fa-solid fa-download" /></span></button> -->
       </section>
       <section class="key-features">
       <div class="feature">

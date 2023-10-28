@@ -49,10 +49,11 @@
 <script setup>
 import {ref} from 'vue'
 import AppModal from '@/components/AppModal.vue'
-import psychologySpecialistImg from '../assets/img/psychology-specialist-screen.png'
-import IpTrackerImg from '../assets/img/ip-tracker-screen.png'
-import RecipesImg from '@/assets/img/recipes-screen.png'
+import psychologySpecialistImg from '../assets/img/psychology-specialist-screen.jpg'
+import IpTrackerImg from '../assets/img/ip-tracker-screen.jpg'
+import RecipesImg from '@/assets/img/recipes-screen.jpg'
 import PortfolioImg from '@/assets/img/portfolio-screen.png'
+import PomodoroImg from '@/assets/img/pomodoro-app.jpg'
 
 const modalDetails = ref({
   project1:   {
@@ -64,6 +65,22 @@ const modalDetails = ref({
     alt: 'psychology specialist website'
   },
   project2: {
+    header: 'Pomodoro App',
+    project: 'Web App',
+    tools: 'Vue, Pinia(state management), JS, HTML, SASS, Responsiveness, Accessibility',
+    preview: 'https://wersv.github.io/pomodoro-app/',
+    img: PomodoroImg,
+    alt: 'pomodoro web app'
+  },
+  project3: {
+    header: 'Portfolio',
+    project: 'Website',
+    tools: 'Vue, Pinia(state management), JS, HTML, SASS, Responsiveness, Accessibility',
+    preview: 'https://wersv.github.io/my-portfolio/',
+    img: PortfolioImg,
+    alt: 'portfolio website'
+  },
+  project4: {
     header: 'Ip Adress Tracker',
     project: 'Web App',
     tools: 'JS, HTML, SASS, REST API, Responsiveness, Accessibility',
@@ -71,15 +88,7 @@ const modalDetails = ref({
     img: IpTrackerImg,
     alt: 'ip tracker website'
   },
-  project3: {
-    header: 'Portfolio',
-    project: 'Website',
-    tools: 'Vue, JS, HTML, SASS, Responsiveness, Accessibility',
-    preview: 'https://wersv.github.io/my-portfolio/',
-    img: PortfolioImg,
-    alt: 'portfolio website'
-  },
-  project4: {
+  project5: {
     header: 'Simply Recipes',
     project: 'Website',
     tools: 'HTML, SASS, Responsiveness, Accessibility',
@@ -95,9 +104,10 @@ const projectData = ref(null);
 
 const projectListMap = {
   'Psychology Specialist': modalDetails.value.project1,
-  'Ip Adress Tracker': modalDetails.value.project2,
+  'Pomodoro App': modalDetails.value.project2,
   'Portfolio': modalDetails.value.project3,
-  'Simply Recipes': modalDetails.value.project4
+  'Ip Adress Tracker': modalDetails.value.project4,
+  'Simply Recipes': modalDetails.value.project5
 }
 
 const openChildModal = (projectName) => {
