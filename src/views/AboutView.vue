@@ -4,7 +4,7 @@
     <div class="wrapper">
       <section class="personal-info">
       <h2>Personal Info</h2>
-      <img src="@/assets/img/portfolio-photo.jpeg" alt="portfolio owner" v-if="isImgShown">
+      <img src="@/assets/img/portfolio-photo.jpg" alt="portfolio owner" v-if="isImgShown">
       <section class="details">
         <div class="detail">
           <p>First Name:</p>
